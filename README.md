@@ -10,10 +10,10 @@ Darwin platforms (iOS, watchOS, tvOS etc.).
 To create new benchmarks, look at the example `benchmark-darwin-samples` gradle module.
 You should create a new module which follows the same convention as the sample.
 
----
+```markdown
 Note:
 The packaged `XCFramework` should always be called `AndroidXDarwinBenchmarks` by convention.
----
+```
 
 This is done using:
 
