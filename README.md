@@ -27,10 +27,13 @@ If you want to define additional iOS specific dependencies that should be done u
 dependencies block.
 
 ```kotlin
-val iosArm64Main by getting {
-    dependencies {
-        api(project(":benchmark-darwin"))
-        // Other dependencies go here
+sourceSets {
+    commonMain {
+        dependencies {
+            implementation(libs.kotlin.stdlib)
+            api("androidx.benchmark:benchmark-darwin:1.2.0-SNAPSHOT")
+            // Other dependencies here
+        }
     }
 }
 ```
