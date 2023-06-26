@@ -18,7 +18,7 @@ kotlin {
         it.binaries.framework {
             baseName = "AndroidXDarwinBenchmarks"
             xcf.add(this)
-            export(project(":benchmark-darwin"))
+            export("androidx.benchmark:benchmark-darwin:1.2.0-SNAPSHOT")
             embedBitcode(BitcodeEmbeddingMode.DISABLE)
         }
     }
@@ -26,13 +26,10 @@ kotlin {
         commonMain {
             dependencies {
                 implementation(libs.kotlin.stdlib)
+                api("androidx.benchmark:benchmark-darwin:1.2.0-SNAPSHOT")
             }
         }
-        val iosArm64Main by getting {
-            dependencies {
-                api(project(":benchmark-darwin"))
-            }
-        }
+        val iosArm64Main by getting
         val sourceSets = listOf("iosSimulatorArm64Main", "iosX64Main")
         sourceSets.forEach { name ->
             getByName(name) {
